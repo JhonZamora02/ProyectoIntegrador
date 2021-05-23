@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('servicio', 'ServicioController');
+Route::resource('garantia', 'GarantiaController');
 
 Route::get('/', function () {
     return view('welcome');
