@@ -2,7 +2,7 @@
 @section('contenido') 
     <div class="row"> 
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
-            <h3>Editar Las Garantias</h3> 
+            <h3>Editar Los Servicios</h3> 
             @if (count($errors)>0) 
             <div class="alert alert-danger"> 
                 <ul> 
@@ -14,43 +14,43 @@
             @endif 
         </div> 
     </div> 
-{{Form::open(array('action'=>array('GarantiaController@update', $garantias->id_garantia),'method'=>'patch'))}} 
+{{Form::open(array('action'=>array('ServicioController@update', $servicios->id_servicio),'method'=>'patch'))}} 
     <div class="row"> 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                 <div class="form-group"> <br> 
-                    <label for="idgarantia">Codigo De La Garantia</label> 
-    <input type="number" name="idgarantia" id="idgarantia" class="form-control" value="{{$garantias->id_garantia}}"> 
+                    <label for="idservicio">Codigo Del Servicio</label> 
+    <input type="number" name="idservicio" id="idservicio" class="form-control" value="{{$servicios->id_servicio}}"> 
             </div> 
             </div> 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                 <div class="form-group"> <br> 
-                    <label for="fgarantia">Fecha De La Garantia</label> 
-                    <input type="text" name="fgarantia" id="fgarantia" class="form-control" 
-value="{{$garantias->fecha_garantia}}"> 
+                    <label for="idgarantia">Codigo De La Garantia</label> 
+                    <input type="text" name="idgarantia" id="idgarantia" class="form-control" 
+value="{{$servicios->id_garantia}}"> 
                 </div> 
             </div> 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <div class="form-group"> <br> 
-                <label for="comentario">Comentarios</label> 
-  <input type="text" name="comentario" id="comentario" class="form-control" value="{{$garantias->comentarios}}"> 
+                <label for="precio">Precio</label> 
+  <input type="text" name="precio" id="precio" class="form-control" value="{{$servicios->precio}}"> 
                </div> 
             </div> 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                 <div class="form-group"><br> 
-                    <label for="condicion">Condicion De la Garantia</label> 
-   <input type="text" name="condicion" id="condicion" class="form-control" value="{{$garantias->condicion}}"> 
+                    <label for="comentario">Comentario</label> 
+   <input type="text" name="comentario" id="comentario" class="form-control" value="{{$servicios->comentarios}}"> 
                 </div> 
             </div> 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                 <div class="form-group"> <br> 
-                    <label for="flimite">Fecha Limite De La Garantia</label> 
-   <input type="text" name="flimite" id="flimite" class="form-control" value="{{$garantias->fecha_limite}}"> 
+                    <label for="tservicio">Tipo de servicio</label> 
+   <input type="text" name="tservicio" id="tservicio" class="form-control" value="{{$servicios->tipo_servicios}}"> 
                 </div> 
             </div> 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                 <div class="form-group"> <br> 
             <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-refresh"></span> Actualizar </button> 
-              <a class="btn btn-info" type="reset" href="{{url('garantia')}}"><span class="glyphicon glyphicon-home"></span> Regresar </a> 
+              <a class="btn btn-info" type="reset" href="{{url('servicio')}}"><span class="glyphicon glyphicon-home"></span> Regresar </a> 
                      </div> 
                   </div> 
                </div> 
