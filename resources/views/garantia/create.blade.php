@@ -23,11 +23,16 @@
 <input type="number" name="idgarantia" id="idgarantia" class="form-control" placeholder= "Digite el código de la garantia"> 
             </div> </div> 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
-                <div class="form-group"> 
-                    <br> 
-                 <label for="fgarantia">Fecha De La Garantia</label> 
-<input type="text" name="fgarantia" id="fgarantia" class="form-control" placeholder="Fecha en la que se hizo la garantia"> 
-               </div> 
+
+               <div class="form-group">
+               <br> <label for="fgarantia">Fecha De La Garantia</label>
+<input type="text" name="fgarantia" id="fgarantia" class="form-control" placeholder="Fecha en la que se hizo la garantia" 
+value="{{date('Y-m-d H:i:s') }}" readonly>
+              </div>
+
+
+
+
    </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                <div class="form-group"> 
@@ -42,9 +47,10 @@
            </div> </div> 
            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                <div class="form-group">
-               <br> <label for="flimite">Fecha Limite De La Garantia</label> 
-<input type="text" name="flimite" id="flimite" class="form-control" placeholder="Fecha limite de vencimiento de la garantia"> 
-               </div> 
+               <br> <label for="flimite">Fecha Limite De La Garantia</label>
+<input type="text" name="flimite" id="flimite" class="form-control" placeholder="Fecha limite de vencimiento de la garantia" 
+value="{{date('Y-m-d H:i:s') }}" readonly>
+              </div>
            </div> 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
       <div class="form-group"> <br> 

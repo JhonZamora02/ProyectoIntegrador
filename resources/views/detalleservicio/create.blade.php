@@ -2,7 +2,7 @@
 @section('contenido') 
  <div class="row"> 
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
-     <h3>Crear Garantia</h3> 
+     <h3>Crear Detalle Servicio</h3> 
             @if (count($errors)>0) 
          <div class="alert alert-danger"> 
               <ul> 
@@ -14,36 +14,41 @@
               @endif 
           </div> 
       </div> 
- {!!Form::open(array('url'=>'garantia','method'=>'POST','autocomplete'=>'off'))!!} 
+ {!!Form::open(array('url'=>'detalleservicio','method'=>'POST','autocomplete'=>'off'))!!} 
        {{Form::token()}} 
        <div class="row"> 
            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
              <div class="form-group"> 
-             <br><label for="idgarantia">Codigo De La Garantia</label> 
-<input type="number" name="idgarantia" id="idgarantia" class="form-control" placeholder= "Digite el código de la garantia"> 
+             <br><label for="iddetalle">Codigo Del Detalle Servicio</label> 
+<input type="number" name="iddetalle" id="iddetalle" class="form-control" placeholder= "Digite el código del detalle del servicio"> 
             </div> </div> 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+
+
                 <div class="form-group"> 
                     <br> 
-                 <label for="fgarantia">Fecha De La Garantia</label> 
-<input type="text" name="fgarantia" id="fgarantia" class="form-control" placeholder="Fecha en la que se hizo la garantia"> 
+                 <label for="idservicio">Codigo Del Servicio</label> 
+<input type="text" name="idservicio" id="idservicio" class="form-control" placeholder="Digite el código del servicio al que hace referencia"> 
                </div> 
+
+
+               
    </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                <div class="form-group"> 
-                   <br><label for="comentario">Comentarios</label> 
-<input type="text" name="comentario" id="comentario" class="form-control" placeholder="Comentarios acerca de la garantia"> 
+                   <br><label for="idpfactura">Codigo Del Pedido De la Factura</label> 
+<input type="text" name="idpfactura" id="idpfactura" class="form-control" placeholder="Digite el código del pedido factura al que hace referencia"> 
                </div> 
            </div> 
            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                <div class="form-group"> 
-               <br> <label for="condicion">Condicion De la Garantia</label> 
-<input type="text" name="condicion" id="condicion" class="form-control" placeholder="Condicion de la garantia"> 
+               <br> <label for="cantidad">Cantidad</label> 
+<input type="text" name="cantidad" id="cantidad" class="form-control" placeholder="Digite la cantidad de servicios"> 
            </div> </div> 
            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                <div class="form-group">
-               <br> <label for="flimite">Fecha Limite De La Garantia</label> 
-<input type="text" name="flimite" id="flimite" class="form-control" placeholder="Fecha limite de vencimiento de la garantia"> 
+               <br> <label for="descuento">Descuento</label> 
+<input type="text" name="descuento" id="descuento" class="form-control" placeholder="Digite el descuento del servicio"> 
                </div> 
            </div> 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
@@ -52,7 +57,7 @@
 
 <button class="btn btn-danger" type="reset"><span class="glyphicon glyphicon-remove"></span> Vaciar Campos</button> 
 
- <a class="btn btn-info" type="reset" href="{{url('garantia')}}"><span class="glyphicon glyphicon-home"></span> Regresar </a> 
+ <a class="btn btn-info" type="reset" href="{{url('detalleservicio')}}"><span class="glyphicon glyphicon-home"></span> Regresar </a> 
                 </div> 
             </div> 
         </div> 

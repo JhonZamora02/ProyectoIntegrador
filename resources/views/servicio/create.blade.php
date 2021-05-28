@@ -42,9 +42,15 @@
            </div> </div> 
            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                <div class="form-group">
-               <br> <label for="tservicio">Tipo de servicio</label> 
-<input type="text" name="tservicio" id="tservicio" class="form-control" placeholder="Digite el tipo de servicio a realizar"> 
-               </div> 
+               <br> <label for="tservicio">Tipo de servicio</label>
+                  <select name="tservicio" id="tservicio" class="form-control selectpicker" data-livesearch="true" required>
+                      <option value="" disabled selected>Seleccionar:</option>
+                      <option value="1">Lamina y pintura</option>
+                      <option value="2">Mecánica general</option>
+                      <option value="3">Sistema eléctrico</option>
+                      <option value="4">Cambio de aceite</option>
+                  </select>
+               </div>
            </div> 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
       <div class="form-group"> <br> 

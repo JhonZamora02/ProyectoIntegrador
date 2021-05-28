@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Garantia;
+use App\DetalleServicio;
+use App\Servicio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
-class GarantiaController extends Controller
+class DetalleServicioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,14 @@ class GarantiaController extends Controller
      */
     public function index()
     {
-        $garantias=Garantia::orderBy('id_garantia','ASC')->paginate(3);
-        return view('garantia.index',compact('garantias'));
+        if($request){
+
+            $query=trim($request->get('searchText'));
+            $detalles=DetalleServicio::orderBy('id_dservicio','ASC')->paginate(3);
+            return view('detalleservicio.index',compact('detalles'));
+            
+        }
+        
     }
 
     /**
@@ -26,8 +33,15 @@ class GarantiaController extends Controller
      */
     public function create()
     {
-        //$request->user()->authorizeRoles('admin');
-        return view ('garantia.create');
+        $servicio=Servicio::orderBy('id_servicio','DESC')->select(
+        'servicios.id_garantia', 
+        'servicios.precio',
+        'servicios.comentarios',
+        'servicios.tipo_servicios',
+        'servicios.id_servicio')->get();
+
+        return view('detalleservicio.create')->with('servicio',$servicio);
+
     }
 
     /**
@@ -38,14 +52,14 @@ class GarantiaController extends Controller
      */
     public function store(Request $request)
     {
-        $garantias=new Garantia; 
-        $garantias->id_garantia=$request->get('idgarantia');
-        $garantias->fecha_garantia=$request->get('fgarantia'); 
-        $garantias->comentarios=$request->get('comentario'); 
-        $garantias->condicion=$request->get('condicion'); 
-        $garantias->fecha_limite=$request->get('flimite'); 
-        $garantias->save(); 
-        return Redirect::to('garantia');
+        $detalles=new DetalleServicio; 
+        $detalles->id_dservicio=$request->get('idgarantia');
+        $detalles->id_servicio=$request->get('fgarantia'); 
+        $detalles->id_pfactura=$request->get('comentario'); 
+        $detalles->cantidad=$request->get('condicion'); 
+        $detalles->descuento=$request->get('flimite'); 
+        $detalles->save(); 
+        return Redirect::to('detalleservicio');
     }
 
     /**

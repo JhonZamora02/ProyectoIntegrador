@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::resource('garantia', 'GarantiaController');
 Route::resource('servicio', 'ServicioController');
+Route::resource('detalleservicio', 'DetalleServicioController');
 
 Route::get('/', function () {
     return view('welcome');
