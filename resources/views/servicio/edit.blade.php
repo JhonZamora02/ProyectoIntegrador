@@ -26,9 +26,30 @@
                 <div class="form-group"> <br> 
                     <label for="idgarantia">Codigo De La Garantia</label> 
                     <input type="text" name="idgarantia" id="idgarantia" class="form-control" 
-value="{{$servicios->id_garantia}}"> 
+value="{{$servicios->garantia_id_garantia}}"> 
+                </div> 
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                <div class="form-group"> <br> 
+                    <label for="idempleado">Codigo Del Empleado</label> 
+                    <input type="text" name="idempleado" id="idempleado" class="form-control" 
+value="{{$servicios->empleado_id_empleado}}"> 
                 </div> 
             </div> 
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                <div class="form-group"> <br> 
+                    <label for="idvehiculo">Codigo Del Vehiculo</label> 
+                    <input type="text" name="idvehiculo" id="idvehiculo" class="form-control" 
+value="{{$servicios->vehiculo_id_vehiculo}}"> 
+                </div> 
+            </div> 
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                <div class="form-group"> <br> 
+                    <label for="idcita">Codigo De la Cita</label> 
+                    <input type="text" name="idcita" id="idcita" class="form-control" 
+value="{{$servicios->cita_id_cita}}"> 
+                </div> 
+            </div>  
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <div class="form-group"> <br> 
                 <label for="precio">Precio</label> 

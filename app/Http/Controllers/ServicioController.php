@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Servicio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Requests\GarantiaCreateRequest;
 
 class ServicioController extends Controller
 {
@@ -44,11 +45,14 @@ class ServicioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(GarantiaCreateRequest $request)
     {
         $servicios=new Servicio; 
         $servicios->id_servicio=$request->get('idservicio');
-        $servicios->id_garantia=$request->get('idgarantia'); 
+        $servicios->garantia_id_garantia=$request->get('idgarantia'); 
+        $servicios->empleado_id_empleado=$request->get('idempleado'); 
+        $servicios->vehiculo_id_vehiculo=$request->get('idvehiculo'); 
+        $servicios->cita_id_cita=$request->get('idcita'); 
         $servicios->precio=$request->get('precio'); 
         $servicios->comentarios=$request->get('comentario'); 
         $servicios->tipo_servicios=$request->get('tservicio'); 
@@ -90,7 +94,10 @@ class ServicioController extends Controller
     {
         $servicios=Servicio::findOrFail($id_servicio); 
         $servicios->id_servicio=$request->get('idservicio');
-        $servicios->id_garantia=$request->get('idgarantia'); 
+        $servicios->garantia_id_garantia=$request->get('idgarantia'); 
+        $servicios->empleado_id_empleado=$request->get('idempleado'); 
+        $servicios->vehiculo_id_vehiculo=$request->get('idvehiculo'); 
+        $servicios->cita_id_cita=$request->get('idcita'); 
         $servicios->precio=$request->get('precio'); 
         $servicios->comentarios=$request->get('comentario'); 
         $servicios->tipo_servicios=$request->get('tservicio'); 

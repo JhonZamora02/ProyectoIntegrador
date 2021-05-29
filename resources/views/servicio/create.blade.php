@@ -29,6 +29,27 @@
 <input type="text" name="idgarantia" id="idgarantia" class="form-control" placeholder="Digite el código de la garantia que hace referencia"> 
                </div> 
    </div>
+   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                <div class="form-group"> 
+                    <br> 
+                 <label for="idempleado">Codigo Del Empleado</label> 
+<input type="text" name="idempleado" id="idempleado" class="form-control" placeholder="Digite el código del empleado que realizo el servicio"> 
+               </div> 
+   </div>
+   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                <div class="form-group"> 
+                    <br> 
+                 <label for="idvehiculo">Codigo Del Vehiculo</label> 
+<input type="text" name="idvehiculo" id="idvehiculo" class="form-control" placeholder="Digite el código del vehiculo"> 
+               </div> 
+   </div>
+   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                <div class="form-group"> 
+                    <br> 
+                 <label for="idcita">Codigo De la Cita</label> 
+<input type="text" name="idcita" id="idcita" class="form-control" placeholder="Digite el código de la cita"> 
+               </div> 
+   </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                <div class="form-group"> 
                    <br><label for="precio">Precio</label> 

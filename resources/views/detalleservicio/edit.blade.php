@@ -25,13 +25,13 @@
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                 <div class="form-group"> <br> 
                     <label for="idservicio">Codigo Del Servicio</label> 
-                    <input type="text" name="idservicio" id="idservicio" class="form-control" value="{{$detalles->id_servicio}}"> 
+                    <input type="text" name="idservicio" id="idservicio" class="form-control" value="{{$detalles->servicio_id_servicio}}"> 
                 </div> 
             </div> 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <div class="form-group"> <br> 
                 <label for="idpfactura">Codigo Del Pedido De la Factura</label> 
-  <input type="text" name="idpfactura" id="idpfactura" class="form-control" value="{{$detalles->id_pfactura}}"> 
+  <input type="text" name="idpfactura" id="idpfactura" class="form-control" value="{{$detalles->pedido_factura_id_pedido_fact }}"> 
                </div> 
             </div> 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
