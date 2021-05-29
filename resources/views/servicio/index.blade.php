@@ -17,6 +17,9 @@
                     <thead> 
                         <th>Id Servicio</th> 
                         <th>Id Garantia</th> 
+                        <th>Id Empleado</th> 
+                        <th>Id Vehiculo</th> 
+                        <th>Id Cita</th> 
                         <th>Precio</th> 
                         <th>Comentario</th> 
                         <th>Tipo Servicio</th> 
@@ -26,7 +29,10 @@
                         @foreach($servicios as $servicio) 
                         <tr> 
             <td>{{ $servicio->id_servicio }}</td> 
-            <td>{{ $servicio->id_garantia }}</td> 
+            <td>{{ $servicio->garantia_id_garantia }}</td>
+            <td>{{ $servicio->empleado_id_empleado }}</td>
+            <td>{{ $servicio->vehiculo_id_vehiculo }}</td>
+            <td>{{ $servicio->cita_id_cita }}</td>
             <td>{{ $servicio->precio }}</td> 
             <td>{{ $servicio->comentarios }}</td> 
             <td>{{ $servicio->tipo_servicios }}</td> 

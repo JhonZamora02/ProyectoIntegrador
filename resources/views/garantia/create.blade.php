@@ -30,9 +30,6 @@
 value="{{date('Y-m-d H:i:s') }}" readonly>
               </div>
 
-
-
-
    </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                <div class="form-group"> 
@@ -49,7 +46,7 @@ value="{{date('Y-m-d H:i:s') }}" readonly>
                <div class="form-group">
                <br> <label for="flimite">Fecha Limite De La Garantia</label>
 <input type="text" name="flimite" id="flimite" class="form-control" placeholder="Fecha limite de vencimiento de la garantia" 
-value="{{date('Y-m-d H:i:s') }}" readonly>
+value="{{date('Y-m-d H:i:s') }}">
               </div>
            </div> 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 

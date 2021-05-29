@@ -13,10 +13,18 @@ class ServicioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $servicios=Servicio::orderBy('id_servicio','ASC')->paginate(3);
-        return view('servicio.index',compact('servicios'));
+        /*$servicios=Servicio::orderBy('id_servicio','ASC')->paginate(3);
+        return view('servicio.index',compact('servicios'));*/
+
+        if($request){
+
+            $query=trim($request->get('searchText'));
+            $servicios=Servicio::orderBy('id_servicio','ASC')->paginate(3);
+            return view('servicio.index',["servicios"=>$servicios,"searchText"=>$query]);
+            
+        }
     }
 
     /**

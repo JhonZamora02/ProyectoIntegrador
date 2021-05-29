@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Garantia;
+use App\Servicio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -13,10 +14,11 @@ class GarantiaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $garantias=Garantia::orderBy('id_garantia','ASC')->paginate(3);
+    public function index(){
+
+        $garantias=Garantia::orderBy('id_garantia','ASC')->paginate(3);   
         return view('garantia.index',compact('garantias'));
+
     }
 
     /**
@@ -26,8 +28,18 @@ class GarantiaController extends Controller
      */
     public function create()
     {
-        //$request->user()->authorizeRoles('admin');
-        return view ('garantia.create');
+
+        $servicio=Servicio::orderBy('id_servicio','DESC')->select(
+            'servicios.id_servicio', 
+            'servicios.garantia_id_garantia', 
+            'servicios.empleado_id_empleado',
+            'servicios.vehiculo_id_vehiculo',
+            'servicios.cita_id_cita',
+            'servicios.precio',
+            'servicios.comentarios',
+            'servicios.tipo_servicios')->get();
+    
+            return view('garantia.create')->with('servicio',$servicio);
     }
 
     /**

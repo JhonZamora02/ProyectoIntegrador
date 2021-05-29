@@ -8,13 +8,12 @@ class DetalleServicio extends Model
 {
     public $timestamps = false;
     protected $primaryKey='id_dservicio';
-    protected $fillable = ['id_dservicio', 'id_servicio', 
-    'id_pfactura', 'cantidad', 'descuento'];
+    protected $fillable = ['id_dservicio', 'servicio_id_servicio ', 
+    'pedido_factura_id_pedido_fact', 'cantidad', 'descuento'];
 
     //Relacion con la tabla servicio
-    public function servicios(){
 
-    return $this->belongsTo('App\Servicio');
-    
+    public function servicios(){
+       return $this->hasMany('App\Servicio');
     }
 }

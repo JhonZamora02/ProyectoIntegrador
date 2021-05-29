@@ -10,4 +10,8 @@ class Garantia extends Model
     protected $primaryKey='id_garantia';
     protected $fillable = ['id_garantia', 'fecha_garantia', 
     'comentarios', 'condicion', 'fecha_limite'];
+
+    public function servicios(){
+        return $this->belongsTo('App\Servicio');
+    }
 }

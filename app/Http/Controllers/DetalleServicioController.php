@@ -14,14 +14,14 @@ class DetalleServicioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         if($request){
 
             $query=trim($request->get('searchText'));
             $detalles=DetalleServicio::orderBy('id_dservicio','ASC')->paginate(3);
-            return view('detalleservicio.index',compact('detalles'));
-            
+            return view('detalleservicio.index',["detalles"=>$detalles,"searchText"=>$query]);
+
         }
         
     }
