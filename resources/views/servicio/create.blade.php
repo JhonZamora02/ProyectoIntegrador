@@ -23,12 +23,22 @@
 <input type="number" name="idservicio" id="idservicio" class="form-control" placeholder= "Digite el código del servicio"> 
             </div> </div> 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
-                <div class="form-group"> 
+                <!--<div class="form-group"> 
                     <br> 
                  <label for="idgarantia">Codigo De La Garantia</label> 
 <input type="text" name="idgarantia" id="idgarantia" class="form-control" placeholder="Digite el código de la garantia que hace referencia"> 
-               </div> 
-   </div>
+            </div> </div>-->
+
+            <div class="form-group">
+           <br>
+              <label for="Role">Codigo De La Garantia</label>
+                 <select name="idgarantia" id="idgarantia" class="form-control selectpicker" data-livesearch="true" required>
+                     <option value="" disabled selected>Garantia:</option>
+                      @foreach($garantia as $garantia)
+                      <option value="{{$garantia->id_garantia}}">{{ $garantia->id_garantia }}</option>
+                    @endforeach
+                 </select>
+          </div></div>
    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                 <div class="form-group"> 
                     <br> 
@@ -66,10 +76,10 @@
                <br> <label for="tservicio">Tipo de servicio</label>
                   <select name="tservicio" id="tservicio" class="form-control selectpicker" data-livesearch="true" required>
                       <option value="" disabled selected>Seleccionar:</option>
-                      <option value="1">Lamina y pintura</option>
-                      <option value="2">Mecánica general</option>
-                      <option value="3">Sistema eléctrico</option>
-                      <option value="4">Cambio de aceite</option>
+                      <option value="Lamina y pintura">Lámina y pintura</option>
+                      <option value="Mecanica general">Mecánica general</option>
+                      <option value="Sistema electrico">Sistema eléctrico</option>
+                      <option value="Cambio de aceite">Cambio de aceite</option>
                   </select>
                </div>
            </div> 

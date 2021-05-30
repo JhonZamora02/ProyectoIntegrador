@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Servicio;
+use App\Garantia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\GarantiaCreateRequest;
@@ -36,7 +37,17 @@ class ServicioController extends Controller
     public function create()
     {
         //$request->user()->authorizeRoles('admin');
-        return view ('servicio.create');
+
+        $garantia=Garantia::orderBy('id_garantia','DESC')->select(
+            'garantias.id_garantia',
+            'garantias.fecha_garantia', 
+            'garantias.comentarios', 
+            'garantias.condicion', 
+            'garantias.fecha_limite')->get();
+    
+            return view('servicio.create')->with('garantia',$garantia);
+
+        //return view ('servicio.create');
     }
 
     /**
@@ -45,7 +56,7 @@ class ServicioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(GarantiaCreateRequest $request)
+    public function store(Request $request)
     {
         $servicios=new Servicio; 
         $servicios->id_servicio=$request->get('idservicio');
@@ -63,7 +74,7 @@ class ServicioController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Garantia  $garantia
+     * @param  \App\Servicio  $servicio
      * @return \Illuminate\Http\Response
      */
     public function show(Servicio $servicio)
@@ -74,7 +85,7 @@ class ServicioController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Garantia  $garantia
+     * @param  \App\Servicio  $servicio
      * @return \Illuminate\Http\Response
      */
     public function edit($id_servicio)
@@ -87,7 +98,7 @@ class ServicioController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Garantia  $garantia
+     * @param  \App\Servicio  $servicio
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id_servicio)
@@ -107,7 +118,7 @@ class ServicioController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Garantia  $garantia
+     * @param  \App\Servicio  $servicio
      * @return \Illuminate\Http\Response
      */
     public function destroy($id_servicio)

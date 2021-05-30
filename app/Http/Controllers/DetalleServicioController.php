@@ -34,11 +34,14 @@ class DetalleServicioController extends Controller
     public function create()
     {
         $servicio=Servicio::orderBy('id_servicio','DESC')->select(
-        'servicios.id_garantia', 
+        'servicios.id_servicio',
+        'servicios.garantia_id_garantia', 
+        'servicios.empleado_id_empleado', 
+        'servicios.vehiculo_id_vehiculo', 
+        'servicios.cita_id_cita', 
         'servicios.precio',
         'servicios.comentarios',
-        'servicios.tipo_servicios',
-        'servicios.id_servicio')->get();
+        'servicios.tipo_servicios')->get();
 
         return view('detalleservicio.create')->with('servicio',$servicio);
 
@@ -53,11 +56,11 @@ class DetalleServicioController extends Controller
     public function store(Request $request)
     {
         $detalles=new DetalleServicio; 
-        $detalles->id_dservicio=$request->get('idgarantia');
-        $detalles->id_servicio=$request->get('fgarantia'); 
-        $detalles->id_pfactura=$request->get('comentario'); 
-        $detalles->cantidad=$request->get('condicion'); 
-        $detalles->descuento=$request->get('flimite'); 
+        $detalles->id_dservicio=$request->get('iddetalle');
+        $detalles->servicio_id_servicio=$request->get('servicio_id'); 
+        $detalles->pedido_factura_id_pedido_fact=$request->get('idpfactura'); 
+        $detalles->cantidad=$request->get('cantidad'); 
+        $detalles->descuento=$request->get('descuento'); 
         $detalles->save(); 
         return Redirect::to('detalleservicio');
     }
@@ -65,7 +68,7 @@ class DetalleServicioController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Garantia  $garantia
+     * @param  \App\DetalleServicio  $detalleservicio
      * @return \Illuminate\Http\Response
      */
     public function show(Garantia $garantia)
@@ -76,42 +79,42 @@ class DetalleServicioController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Garantia  $garantia
+     * @param  \App\DetalleServicio  $detalleservicio
      * @return \Illuminate\Http\Response
      */
-    public function edit($id_garantia)
+    public function edit($id_dservicio)
     {
-        $garantias=Garantia::findOrFail($id_garantia); 
-        return view("garantia.edit",["garantias"=>$garantias]);
+        $detalles=DetalleServicio::findOrFail($id_dservicio); 
+        return view("detalleservicio.edit",["detalles"=>$detalles]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Garantia  $garantia
+     * @param  \App\DetalleServicio  $detalleservicio
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id_garantia)
+    public function update(Request $request, $id_dservicio)
     {
-        $garantias=Garantia::findOrFail($id_garantia); 
-        $garantias->id_garantia=$request->get('idgarantia');
-        $garantias->fecha_garantia=$request->get('fgarantia'); 
-        $garantias->comentarios=$request->get('comentario'); 
-        $garantias->condicion=$request->get('condicion'); 
-        $garantias->fecha_limite=$request->get('flimite');
-        $garantias->update(); return Redirect::to('garantia');
+        $detalles=DetalleServicio::findOrFail($id_dservicio); 
+        $detalles->id_dservicio=$request->get('iddetalle');
+        $detalles->servicio_id_servicio=$request->get('servicio_id'); 
+        $detalles->pedido_factura_id_pedido_fact=$request->get('idpfactura'); 
+        $detalles->cantidad=$request->get('cantidad'); 
+        $detalles->descuento=$request->get('descuento'); 
+        $detalles->update(); return Redirect::to('detalleservicio');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Garantia  $garantia
+     * @param  \App\DetalleServicio  $detalleservicio
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id_garantia)
+    public function destroy($id_dservicio)
     {
-        $garantias=Garantia::findOrFail($id_garantia); 
-        $garantias->delete(); return Redirect::to('garantia');
+        $detalles=DetalleServicio::findOrFail($id_dservicio); 
+        $detalles->delete(); return Redirect::to('detalleservicio');
     }
 }

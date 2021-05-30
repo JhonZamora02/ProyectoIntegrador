@@ -14,7 +14,7 @@ class Servicio extends Model
     //Relacion con la tabla detalle servicio
 
     public function detalle_servicios(){
-        return $this->belongsTo('App\DetalleServicio');
+        return $this->hasMany('App\DetalleServicio');
     }   
 
     /*public function citas(){
@@ -22,7 +22,7 @@ class Servicio extends Model
     }*/
 
     public function garantias(){
-        return $this->hasMany('App\Garantia');
+        return $this->belongsTo('App\Garantia');
     }
 
     /*public function vehiculos(){

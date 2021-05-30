@@ -12,6 +12,6 @@ class Garantia extends Model
     'comentarios', 'condicion', 'fecha_limite'];
 
     public function servicios(){
-        return $this->belongsTo('App\Servicio');
+        return $this->hasMany('App\Servicio');
     }
 }

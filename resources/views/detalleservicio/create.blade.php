@@ -18,22 +18,26 @@
        {{Form::token()}} 
        <div class="row"> 
            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
-             <div class="form-group"> 
+            <div class="form-group"> 
              <br><label for="iddetalle">Codigo Del Detalle Servicio</label> 
 <input type="number" name="iddetalle" id="iddetalle" class="form-control" placeholder= "Digite el código del detalle del servicio"> 
             </div> </div> 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
-
-
-                <div class="form-group"> 
+                <!--<div class="form-group"> 
                     <br> 
                  <label for="idservicio">Codigo Del Servicio</label> 
 <input type="text" name="idservicio" id="idservicio" class="form-control" placeholder="Digite el código del servicio al que hace referencia"> 
-               </div> 
-
-
-               
-   </div>
+               </div>-->
+           <div class="form-group">
+           <br>
+              <label for="Role">Codigo Del Servicio</label>
+                 <select name="servicio_id" id="servicio_id" class="form-control selectpicker" data-livesearch="true" required>
+                     <option value="" disabled selected>Servicio:</option>
+                      @foreach($servicio as $servicio)
+                      <option value="{{$servicio->id_servicio}}">{{ $servicio->id_servicio }}</option>
+                    @endforeach
+                 </select>
+          </div></div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                <div class="form-group"> 
                    <br><label for="idpfactura">Codigo Del Pedido De la Factura</label> 

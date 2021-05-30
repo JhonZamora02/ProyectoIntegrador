@@ -14,6 +14,6 @@ class DetalleServicio extends Model
     //Relacion con la tabla servicio
 
     public function servicios(){
-       return $this->hasMany('App\Servicio');
+       return $this->belongsTo('App\Servicio');
     }
 }

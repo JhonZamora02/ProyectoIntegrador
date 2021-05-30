@@ -26,7 +26,7 @@
                         @foreach($detalles as $detalle) 
                         <tr> 
             <td>{{ $detalle->id_dservicio }}</td> 
-            <td>{{ $detalle->servicios->id_servicio }}</td> 
+            <td>{{ $detalle->servicio_id_servicio }}</td> 
             <td>{{ $detalle->pedido_factura_id_pedido_fact }}</td> 
             <td>{{ $detalle->cantidad }}</td> 
             <td>{{ $detalle->descuento }}</td> 

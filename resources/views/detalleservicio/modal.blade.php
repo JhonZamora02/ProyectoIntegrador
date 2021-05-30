@@ -1,5 +1,5 @@
 <div class="modal fade modal-slide-in-right" aria-hidden="true" role="dialog" tabindex="-1" 
-id="modal-delete-{{$garantia->id_garantia}}"> 
+id="modal-delete-{{$detalle->id_dservicio}}"> 
 {{Form::Open(array('action'=>array('DetalleServicioController@destroy',$detalle->id_dservicio),'method'=>'delete'))}} 
    <div class="modal-dialog"> 
        <div class="modal-content"> 
@@ -10,7 +10,7 @@ id="modal-delete-{{$garantia->id_garantia}}">
                 <h4 class="modal-title">Eliminar Detalle Del Servicio</h4> 
             </div> 
             <div class="modal-body"> 
-                <p>Confirme si desea ELIMINAR este detella?</p> 
+                <p>Confirme si desea ELIMINAR este detalle?</p> 
             </div> 
             <div class="modal-footer"> 
 <button type="button" class="btn btn-default" data-dismiss="modal"> Cerrar </button> 
