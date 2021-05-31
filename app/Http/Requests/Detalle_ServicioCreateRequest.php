@@ -13,7 +13,7 @@ class Detalle_ServicioCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,26 @@ class Detalle_ServicioCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            
+            'id_dservicio'=>'required',
+            'servicio_id_servicio'=>'required',
+            'pedido_factura_id_pedido_fact'=>'required',
+            'cantidad'=>'required',
+            'descuento'=>'required',
+
         ];
     }
+
+    public function messages(){
+
+        return [
+          'id_dservicio.required' => 'El código del detalle servicio debe ser un campo requerido',
+          'servicio_id_servicio.required' => 'El código del servicio debe ser un campo requerido',
+          'pedido_factura_id_pedido_fact.required' => 'El código del pedido factura debe ser un campo requerido',
+          'cantidad.required' => 'La cantidad debe ser un campo requerido',
+          'descuento.required' => 'El descuento debe ser un campo requerido',
+         ];
+     
+     }
+
 }

@@ -24,8 +24,10 @@ class GarantiaCreateRequest extends FormRequest
     public function rules()
     {
         return [
+            'id_garantia'=>'required',
             'fecha_garantia'=>'required',
             'condicion'=>'required',
+            'comentarios'=>'required',
             'fecha_limite'=>'required',
         ];
     }
@@ -33,8 +35,10 @@ class GarantiaCreateRequest extends FormRequest
     public function messages(){
 
         return [
+          'id_garantia.required' => 'El código de la garantia debe ser un campo requerido',
           'fecha_garantia.required' => 'La fecha de la garantia debe ser un campo requerido',
           'condicion.required' => 'La condicion de la garantia debe ser un campo requerido',
+          'comentarios.required' => 'Los comentarios de la garantia debe ser un campo requerido',
           'fecha_limite.required' => 'La fecha limite de la garantia debe ser un campo requerido',
          ];
      

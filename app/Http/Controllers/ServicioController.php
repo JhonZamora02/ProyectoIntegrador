@@ -6,7 +6,6 @@ use App\Servicio;
 use App\Garantia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use App\Http\Requests\GarantiaCreateRequest;
 
 class ServicioController extends Controller
 {
@@ -56,7 +55,7 @@ class ServicioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ServicioCreateRequest $request)
     {
         $servicios=new Servicio; 
         $servicios->id_servicio=$request->get('idservicio');
