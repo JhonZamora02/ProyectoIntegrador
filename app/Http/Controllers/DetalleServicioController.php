@@ -6,6 +6,7 @@ use App\DetalleServicio;
 use App\Servicio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Requests\Detalle_ServicioCreateRequest;
 
 class DetalleServicioController extends Controller
 {
