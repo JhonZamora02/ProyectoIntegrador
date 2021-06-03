@@ -54,7 +54,7 @@ class DetalleServicioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Detalle_ServicioCreateRequest $request)
+    public function store(Request $request)
     {
         $detalles=new DetalleServicio; 
         $detalles->id_dservicio=$request->get('iddetalle');

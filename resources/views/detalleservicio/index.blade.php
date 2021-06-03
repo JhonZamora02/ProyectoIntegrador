@@ -2,7 +2,6 @@
 @section('contenido') 
 <div class="row"> 
         <div class="col-md-8 col-xs-12"> 
-            @include('detalleservicio.search') 
         </div> 
         <div class="col-md-2"> 
             <a href="detalleservicio/create" class="pull-right"> 

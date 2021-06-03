@@ -49,7 +49,7 @@ class GarantiaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(GarantiaCreateRequest $request)
+    public function store(Request $request)
     {
         $garantias=new Garantia; 
         $garantias->id_garantia=$request->get('idgarantia');

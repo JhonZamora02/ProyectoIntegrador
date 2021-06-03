@@ -56,7 +56,7 @@ class ServicioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ServicioCreateRequest $request)
+    public function store(Request $request)
     {
         $servicios=new Servicio; 
         $servicios->id_servicio=$request->get('idservicio');

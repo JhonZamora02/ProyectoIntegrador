@@ -1,12 +1,11 @@
 @extends('layouts.plantilla') 
 @section('contenido') 
 <div class="row"> 
-        <div class="col-md-8 col-xs-12"> 
-            @include('servicio.search') 
+        <div class="col-md-8 col-xs-12">       
         </div> 
         <div class="col-md-2"> 
-            <a href="servicio/create" class="pull-right"> 
-                <button class="btn btn-success">Crear Servicio</button> 
+            <a href="servicio/create" class="pull-right">
+                <button class="btn btn-success" style="text-align: center">Crear Servicio</button> 
             </a> 
         </div> 
     </div> 

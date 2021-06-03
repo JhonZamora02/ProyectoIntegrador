@@ -34,7 +34,7 @@
                  <select name="servicio_id" id="servicio_id" class="form-control selectpicker" data-livesearch="true" required>
                      <option value="" disabled selected>Servicio:</option>
                       @foreach($servicio as $servicio)
-                      <option value="{{$servicio->id_servicio}}">{{ $servicio->id_servicio }}</option>
+                      <option value="{{$servicio->id_servicio}}">{{ $servicio->tipo_servicios }}</option>
                     @endforeach
                  </select>
           </div></div>
