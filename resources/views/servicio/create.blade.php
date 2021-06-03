@@ -35,7 +35,7 @@
                  <select name="idgarantia" id="idgarantia" class="form-control selectpicker" data-livesearch="true" required>
                      <option value="" disabled selected>Garantia:</option>
                       @foreach($garantia as $garantia)
-                      <option value="{{$garantia->id_garantia}}">{{ $garantia->id_garantia }}</option>
+                      <option value="{{$garantia->id_garantia}}">{{ $garantia->condicion }}</option>
                     @endforeach
                  </select>
           </div></div>

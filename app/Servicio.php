@@ -30,7 +30,7 @@ class Servicio extends Model
     }*/
 
     /*public function empleados(){
-        return $this->hasMany('App\Empleados');
+        return $this->belongsTo('App\Empleados');
     }*/
 
 
