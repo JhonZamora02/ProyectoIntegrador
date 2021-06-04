@@ -25,7 +25,6 @@ class Detalle_ServicioCreateRequest extends FormRequest
     {
         return [
             
-            'id_dservicio'=>'required',
             'servicio_id_servicio'=>'required',
             'pedido_factura_id_pedido_fact'=>'required',
             'cantidad'=>'required',

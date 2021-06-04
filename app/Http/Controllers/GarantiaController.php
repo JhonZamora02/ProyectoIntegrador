@@ -49,14 +49,14 @@ class GarantiaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(GarantiaCreateRequest $request)
     {
         $garantias=new Garantia; 
-        $garantias->id_garantia=$request->get('idgarantia');
-        $garantias->fecha_garantia=$request->get('fgarantia'); 
-        $garantias->comentarios=$request->get('comentario'); 
+        $garantias->id_garantia=$request->get('id_garantia');
+        $garantias->fecha_garantia=$request->get('fecha_garantia'); 
+        $garantias->comentarios=$request->get('comentarios'); 
         $garantias->condicion=$request->get('condicion'); 
-        $garantias->fecha_limite=$request->get('flimite'); 
+        $garantias->fecha_limite=$request->get('fecha_limite'); 
         $garantias->save(); 
         return Redirect::to('garantia');
     }
@@ -94,11 +94,11 @@ class GarantiaController extends Controller
     public function update(Request $request, $id_garantia)
     {
         $garantias=Garantia::findOrFail($id_garantia); 
-        $garantias->id_garantia=$request->get('idgarantia');
-        $garantias->fecha_garantia=$request->get('fgarantia'); 
-        $garantias->comentarios=$request->get('comentario'); 
+        $garantias->id_garantia=$request->get('id_garantia');
+        $garantias->fecha_garantia=$request->get('fecha_garantia'); 
+        $garantias->comentarios=$request->get('comentarios'); 
         $garantias->condicion=$request->get('condicion'); 
-        $garantias->fecha_limite=$request->get('flimite');
+        $garantias->fecha_limite=$request->get('fecha_limite'); 
         $garantias->update(); return Redirect::to('garantia');
     }
 

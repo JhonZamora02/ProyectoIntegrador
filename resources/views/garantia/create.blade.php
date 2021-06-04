@@ -17,24 +17,24 @@
  {!!Form::open(array('url'=>'garantia','method'=>'POST','autocomplete'=>'off'))!!} 
        {{Form::token()}} 
        <div class="row"> 
-           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+           <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
              <div class="form-group"> 
-             <br><label for="idgarantia">Codigo De La Garantia</label> 
-<input type="number" name="idgarantia" id="idgarantia" class="form-control" placeholder= "Digite el código de la garantia"> 
-            </div> </div> 
+             <br><label for="id_garantia">Codigo De La Garantia</label> 
+<input type="number" name="id_garantia" id="id_garantia" class="form-control" placeholder= "Digite el código de la garantia"> 
+            </div> </div>--> 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
 
                <div class="form-group">
-               <br> <label for="fgarantia">Fecha De La Garantia</label>
-<input type="text" name="fgarantia" id="fgarantia" class="form-control" placeholder="Fecha en la que se hizo la garantia" 
-value="{{date('Y-m-d H:i:s') }}" readonly>
+               <br> <label for="fecha_garantia">Fecha De La Garantia</label>
+<input type="date" name="fecha_garantia" id="fecha_garantia" class="form-control" placeholder="Fecha en la que se hizo la garantia" 
+value="{{date('Y-m-d H:i:s') }}">
               </div>
 
    </div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                <div class="form-group"> 
-                   <br><label for="comentario">Comentarios</label> 
-<input type="text" name="comentario" id="comentario" class="form-control" placeholder="Comentarios acerca de la garantia"> 
+                   <br><label for="comentarios">Comentarios</label> 
+<input type="text" name="comentarios" id="comentarios" class="form-control" placeholder="Comentarios acerca de la garantia"> 
                </div> 
            </div> 
            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
@@ -44,8 +44,8 @@ value="{{date('Y-m-d H:i:s') }}" readonly>
            </div> </div> 
            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                <div class="form-group">
-               <br> <label for="flimite">Fecha Limite De La Garantia</label>
-<input type="text" name="flimite" id="flimite" class="form-control" placeholder="Fecha limite de vencimiento de la garantia" 
+               <br> <label for="fecha_limite">Fecha Limite De La Garantia</label>
+<input type="date" name="fecha_limite" id="fecha_limite" class="form-control" placeholder="Fecha limite de vencimiento de la garantia" 
 value="{{date('Y-m-d H:i:s') }}">
               </div>
            </div> 

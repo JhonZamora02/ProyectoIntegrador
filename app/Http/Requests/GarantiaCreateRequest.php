@@ -24,7 +24,6 @@ class GarantiaCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'id_garantia'=>'required',
             'fecha_garantia'=>'required',
             'condicion'=>'required',
             'comentarios'=>'required',

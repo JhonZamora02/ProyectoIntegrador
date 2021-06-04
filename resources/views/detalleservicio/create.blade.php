@@ -17,11 +17,11 @@
  {!!Form::open(array('url'=>'detalleservicio','method'=>'POST','autocomplete'=>'off'))!!} 
        {{Form::token()}} 
        <div class="row"> 
-           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+           <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
             <div class="form-group"> 
-             <br><label for="iddetalle">Codigo Del Detalle Servicio</label> 
-<input type="number" name="iddetalle" id="iddetalle" class="form-control" placeholder= "Digite el código del detalle del servicio"> 
-            </div> </div> 
+             <br><label for="id_dservicio">Codigo Del Detalle Servicio</label> 
+<input type="number" name="id_dservicio" id="id_dservicio" class="form-control" placeholder= "Digite el código del detalle del servicio"> 
+            </div> </div>--> 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                 <!--<div class="form-group"> 
                     <br> 
@@ -31,7 +31,7 @@
            <div class="form-group">
            <br>
               <label for="Role">Codigo Del Servicio</label>
-                 <select name="servicio_id" id="servicio_id" class="form-control selectpicker" data-livesearch="true" required>
+                 <select name="servicio_id_servicio" id="servicio_id_servicio" class="form-control selectpicker" data-livesearch="true" required>
                      <option value="" disabled selected>Servicio:</option>
                       @foreach($servicio as $servicio)
                       <option value="{{$servicio->id_servicio}}">{{ $servicio->tipo_servicios }}</option>
@@ -40,8 +40,8 @@
           </div></div>
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                <div class="form-group"> 
-                   <br><label for="idpfactura">Codigo Del Pedido De la Factura</label> 
-<input type="text" name="idpfactura" id="idpfactura" class="form-control" placeholder="Digite el código del pedido factura al que hace referencia"> 
+                   <br><label for="pedido_factura_id_pedido_fact">Codigo Del Pedido De la Factura</label> 
+<input type="text" name="pedido_factura_id_pedido_fact" id="pedido_factura_id_pedido_fact" class="form-control" placeholder="Digite el código del pedido factura al que hace referencia"> 
                </div> 
            </div> 
            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 

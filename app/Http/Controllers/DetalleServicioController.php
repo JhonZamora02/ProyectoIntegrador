@@ -54,12 +54,12 @@ class DetalleServicioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Detalle_ServicioCreateRequest $request)
     {
         $detalles=new DetalleServicio; 
-        $detalles->id_dservicio=$request->get('iddetalle');
-        $detalles->servicio_id_servicio=$request->get('servicio_id'); 
-        $detalles->pedido_factura_id_pedido_fact=$request->get('idpfactura'); 
+        $detalles->id_dservicio=$request->get('id_dservicio');
+        $detalles->servicio_id_servicio=$request->get('servicio_id_servicio'); 
+        $detalles->pedido_factura_id_pedido_fact=$request->get('pedido_factura_id_pedido_fact'); 
         $detalles->cantidad=$request->get('cantidad'); 
         $detalles->descuento=$request->get('descuento'); 
         $detalles->save(); 

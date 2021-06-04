@@ -25,7 +25,6 @@ class ServicioCreateRequest extends FormRequest
     {
         return [
             
-            'id_servicio'=>'required',
             'garantia_id_garantia'=>'required',
             'empleado_id_empleado'=>'required',
             'vehiculo_id_vehiculo'=>'required',
