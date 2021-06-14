@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use BD;
+use DB;
 use App\Servicio;
 use App\Garantia;
 use Illuminate\Http\Request;
@@ -21,26 +21,22 @@ class ServicioController extends Controller
         /*$servicios=Servicio::orderBy('id_servicio','ASC')->paginate(3);
         return view('servicio.index',compact('servicios'));*/
 
+        /*$datos=DB::table('servicios as serv')
+        ->join('detalle_servicios as dserv','dserv.servicio_id_servicio','=','serv.id_servicio')
+        ->join('citas as cit','cit.id_cita','=','serv.cita_id_cita')
+        ->join('empleados as emp','emp.id_empleado','=','serv.empleado_id_empleado')
+        ->join('vehiculos as veh','veh.id_vehiculo','=','serv.vehiculo_id_vehiculo')
+        ->join('garantias as gar','gar.id_garantia','=','serv.garantia_id_garantia')
+        ->select("veh.placa", "emp.nombre_completo", "cit.fecha_cita", "dserv.servicio_id_servicio")
+        ->get();*/
+
         if($request){
 
             $query=trim($request->get('searchText'));
             $servicios=Servicio::orderBy('id_servicio','ASC')->paginate(3);
-            return view('servicio.index',["servicios"=>$servicios,"searchText"=>$query]);
+            return view('servicio.index',["servicios"=>$datos,"searchText"=>$query]);
             
         }
-
-        /*$url_asignada=$id_servicio;
-
-        $datos=BD::table('servicios as serv')
-        ->join('detalle_servicio as dserv','dserv.servicio_id_servicio','=','serv.id_servicio')
-        ->join('citas as cit','cit.id_cita','=','serv.cita_id_cita')
-        ->join('empleados as emp','emp.id_empleado','=','serv.empleado_id_empleado')
-        ->join('vehiculos as veh','veh.	id_vehiculo','=','serv.vehiculo_id_vehiculo')
-        ->join('garantias as gar','gar.id_garantia','=','serv.garantia_id_garantia')
-        ->where('dserv.servicio_id_servicio','=',$url_asignada)
-        ->get();
-
-        dd($datos);*/
 
     }
 
