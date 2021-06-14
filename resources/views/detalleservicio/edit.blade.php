@@ -16,12 +16,12 @@
     </div> 
 {{Form::open(array('action'=>array('DetalleServicioController@update', $detalles->id_dservicio),'method'=>'patch'))}} 
     <div class="row"> 
-            <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                 <div class="form-group"> <br> 
                     <label for="id_dservicio">Codigo Del Detalle Servicio</label> 
     <input type="number" name="id_dservicio" id="id_dservicio" class="form-control" value="{{$detalles->id_dservicio}}"> 
             </div> 
-            </div>--> 
+            </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                 <div class="form-group"> <br> 
                     <label for="servicio_id_servicio">Codigo Del Servicio</label> 

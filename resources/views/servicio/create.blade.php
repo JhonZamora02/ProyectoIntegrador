@@ -17,11 +17,11 @@
  {!!Form::open(array('url'=>'servicio','method'=>'POST','autocomplete'=>'off'))!!} 
        {{Form::token()}} 
        <div class="row"> 
-           <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
              <div class="form-group"> 
              <br><label for="id_servicio">Codigo Del Servicio</label> 
 <input type="number" name="id_servicio" id="id_servicio" class="form-control" placeholder= "Digite el código del servicio"> 
-            </div> </div>--> 
+            </div> </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                 <!--<div class="form-group"> 
                     <br> 

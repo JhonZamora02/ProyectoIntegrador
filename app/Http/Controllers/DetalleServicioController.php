@@ -99,9 +99,9 @@ class DetalleServicioController extends Controller
     public function update(Request $request, $id_dservicio)
     {
         $detalles=DetalleServicio::findOrFail($id_dservicio); 
-        $detalles->id_dservicio=$request->get('iddetalle');
-        $detalles->servicio_id_servicio=$request->get('servicio_id'); 
-        $detalles->pedido_factura_id_pedido_fact=$request->get('idpfactura'); 
+        $detalles->id_dservicio=$request->get('id_dservicio');
+        $detalles->servicio_id_servicio=$request->get('servicio_id_servicio'); 
+        $detalles->pedido_factura_id_pedido_fact=$request->get('pedido_factura_id_pedido_fact'); 
         $detalles->cantidad=$request->get('cantidad'); 
         $detalles->descuento=$request->get('descuento'); 
         $detalles->update(); return Redirect::to('detalleservicio');

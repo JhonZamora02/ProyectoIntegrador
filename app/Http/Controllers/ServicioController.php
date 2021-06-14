@@ -115,14 +115,14 @@ class ServicioController extends Controller
     public function update(Request $request, $id_servicio)
     {
         $servicios=Servicio::findOrFail($id_servicio); 
-        $servicios->id_servicio=$request->get('idservicio');
-        $servicios->garantia_id_garantia=$request->get('idgarantia'); 
-        $servicios->empleado_id_empleado=$request->get('idempleado'); 
-        $servicios->vehiculo_id_vehiculo=$request->get('idvehiculo'); 
-        $servicios->cita_id_cita=$request->get('idcita'); 
+        $servicios->id_servicio=$request->get('id_servicio');
+        $servicios->garantia_id_garantia=$request->get('garantia_id_garantia'); 
+        $servicios->empleado_id_empleado=$request->get('empleado_id_empleado'); 
+        $servicios->vehiculo_id_vehiculo=$request->get('vehiculo_id_vehiculo'); 
+        $servicios->cita_id_cita=$request->get('cita_id_cita'); 
         $servicios->precio=$request->get('precio'); 
-        $servicios->comentarios=$request->get('comentario'); 
-        $servicios->tipo_servicios=$request->get('tservicio'); 
+        $servicios->comentarios=$request->get('comentarios'); 
+        $servicios->tipo_servicios=$request->get('tipo_servicios'); 
         $servicios->update(); return Redirect::to('servicio');
     }
 

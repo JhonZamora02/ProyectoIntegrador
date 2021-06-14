@@ -16,12 +16,12 @@
     </div> 
 {{Form::open(array('action'=>array('ServicioController@update', $servicios->id_servicio),'method'=>'patch'))}} 
     <div class="row"> 
-            <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                 <div class="form-group"> <br> 
                     <label for="id_servicio">Codigo Del Servicio</label> 
     <input type="number" name="id_servicio" id="id_servicio" class="form-control" value="{{$servicios->id_servicio}}"> 
             </div> 
-            </div>--> 
+            </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                 <div class="form-group"> <br> 
                     <label for="garantia_id_garantia">Codigo De La Garantia</label> 
@@ -63,10 +63,16 @@ value="{{$servicios->cita_id_cita}}">
                 </div> 
             </div> 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
-                <div class="form-group"> <br> 
-                    <label for="tipo_servicios">Tipo de servicio</label> 
-   <input type="text" name="tipo_servicios" id="tipo_servicios" class="form-control" value="{{$servicios->tipo_servicios}}"> 
-                </div> 
+            <div class="form-group">
+               <br> <label for="tipo_servicios">Tipo de servicio</label>
+                  <select name="tipo_servicios" id="tipo_servicios" class="form-control selectpicker" value="{{$servicios->tipo_servicios}}" data-livesearch="true" required>
+                      <option value="" disabled selected>Seleccionar:</option>
+                      <option value="Lamina y pintura">Lámina y pintura</option>
+                      <option value="Mecanica general">Mecánica general</option>
+                      <option value="Sistema electrico">Sistema eléctrico</option>
+                      <option value="Cambio de aceite">Cambio de aceite</option>
+                  </select>
+               </div>
             </div> 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                 <div class="form-group"> <br> 
