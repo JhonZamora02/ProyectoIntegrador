@@ -34,7 +34,7 @@ class ServicioController extends Controller
 
             $query=trim($request->get('searchText'));
             $servicios=Servicio::orderBy('id_servicio','ASC')->paginate(3);
-            return view('servicio.index',["servicios"=>$datos,"searchText"=>$query]);
+            return view('servicio.index',["servicios"=>$servicios,"searchText"=>$query]);
             
         }
 
